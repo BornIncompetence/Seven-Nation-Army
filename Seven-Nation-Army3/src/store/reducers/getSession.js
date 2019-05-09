@@ -57,14 +57,14 @@ export default function session(state = initialState, action) {
         ...state,
         session: null,
         sessionError: action.payload,
-      }
+      };
     case LEAVE_SESSION:
       return {
         ...state,
         session: null,
         sessions: null,
         sessionError: null,
-      }
+      };
     default:
       return state;
   }

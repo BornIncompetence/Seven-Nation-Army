@@ -10,12 +10,6 @@ import './App.scss';
 // routes
 import routes from './routes';
 
-// common components
-/*
-import Header from './common/components/Header'
-import Footer from './common/components/Footer'
-*/
-
 class App extends Component {
   render() {
     return (

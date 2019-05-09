@@ -15,9 +15,9 @@ export default class ChatSearch extends Component {
       // />
 
       <div className="search">
-      <input type="text" placeholder="search" />
-      <i className="fa fa-search"></i>
-    </div>
+        <input type="text" placeholder="search" />
+        <i className="fa fa-search" />
+      </div>
     );
   }
 }

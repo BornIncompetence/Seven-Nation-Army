@@ -31,7 +31,7 @@ export function submitOrders() {
     .set({
       action,
     });
-    console.log(orders);
+  console.log(orders);
 }
 export function getPlayers() {
   var playersRef = getFirebase()

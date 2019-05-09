@@ -6,25 +6,25 @@ export default class ChatList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: []
+      players: [],
     };
     const firebase = getFirebase();
     this.firebase = firebase;
-    this.playerRef = firebase.database().ref('root/sessions/-LeTFyD10JE1O-GKaU14/participatingUserIDs/');
+    this.playerRef = firebase
+      .database()
+      .ref('root/sessions/-LeTFyD10JE1O-GKaU14/participatingUserIDs/');
   }
 
   listenForPlayers(playerRef) {
-    this.firebase.auth().onAuthStateChanged((user) => { 
-
+    this.firebase.auth().onAuthStateChanged(user => {
       const playerList = [];
       playerRef.once('value').then(snapshot => {
-      
         snapshot.forEach(element => {
-          if(user.uid != element.key) {
+          if (user.uid != element.key) {
             playerList.push({
               id: element.key,
               username: element.val().username,
-              country: element.val().country
+              country: element.val().country,
             });
           }
         });
@@ -51,11 +51,10 @@ export default class ChatList extends Component {
           status={el.country}
         />
       );
-    })
+    });
 
     return (
       <Fragment>
-
         {players}
         {/* <Person
           name="Vincent Port"
@@ -97,4 +96,3 @@ export default class ChatList extends Component {
     );
   }
 }
-

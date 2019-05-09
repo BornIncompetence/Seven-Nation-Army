@@ -27,10 +27,9 @@ export class NewGame extends Component {
     super(props);
 
     this.state = {
-      title:'',
+      title: '',
       passcode: '',
-      adjudicationPeriod:'5',
-
+      adjudicationPeriod: '5',
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -41,11 +40,10 @@ export class NewGame extends Component {
     });
   };
 
-
   onSubmit = event => {
-    const {title} = this.state;
-    const {passcode} = this.state;
-    const {adjudicationPeriod} = this.state;
+    const { title } = this.state;
+    const { passcode } = this.state;
+    const { adjudicationPeriod } = this.state;
     event.preventDefault();
     this.props.createSession(title, passcode, adjudicationPeriod);
   };
@@ -61,50 +59,54 @@ export class NewGame extends Component {
         </nav>
         <Card className="LoginCard">
           <CardBody>
-            <CardTitle style={labelStyle} className="text-center">Create New Game</CardTitle>
-            <hr className="my-2" />< br />
+            <CardTitle style={labelStyle} className="text-center">
+              Create New Game
+            </CardTitle>
+            <hr className="my-2" />
+            <br />
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
                 <Label style={labelStyle}>Game Title</Label>
-                <Input 
+                <Input
                   type="text"
                   name="title"
                   id="title"
                   placeholder="Enter game title"
                   value={this.state.title}
                   onChange={this.onChange}
-                ></Input>
+                />
               </FormGroup>
               <FormGroup>
                 <Label style={labelStyle}>Passcode</Label>
-                <Input type="text"
+                <Input
+                  type="text"
                   type="text"
                   name="passcode"
                   id="passcode"
                   placeholder="Enter passcode "
                   value={this.state.passcode}
                   onChange={this.onChange}
-                
-                ></Input>
+                />
               </FormGroup>
               <FormGroup>
                 <Label style={labelStyle}>Adjudication Period</Label>
-                <Input type="select"
+                <Input
+                  type="select"
                   id="adjudicationPeriod"
                   onChange={this.onChange}
                   value={this.state.adjudicationPeriod}
-                  
-                
                 >
-                    <option>5 minutes</option>
-                    <option>10 minutes</option>
-                    <option>15 minutes</option>
-                    <option>30 minutes</option>
-                    <option>1 hour</option>
-                    <option>2 hours</option>
+                  <option>5 minutes</option>
+                  <option>10 minutes</option>
+                  <option>15 minutes</option>
+                  <option>30 minutes</option>
+                  <option>1 hour</option>
+                  <option>2 hours</option>
                 </Input>
               </FormGroup>
-              <Button color="primary" onClick={this.onSubmit}>Create New Game</Button>
+              <Button color="primary" onClick={this.onSubmit}>
+                Create New Game
+              </Button>
             </Form>
           </CardBody>
         </Card>
@@ -118,7 +120,8 @@ NewGame.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createSession: (title, passcode, adjudicationPeriod) => dispatch(createSession(title, passcode, adjudicationPeriod)),
+  createSession: (title, passcode, adjudicationPeriod) =>
+    dispatch(createSession(title, passcode, adjudicationPeriod)),
 });
 
 export default connect(

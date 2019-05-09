@@ -1,6 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Form, FormGroup, Label, Button, Input, Card, CardBody, CardTitle } from 'reactstrap';
+import {
+  Form,
+  FormGroup,
+  Label,
+  Button,
+  Input,
+  Card,
+  CardBody,
+  CardTitle,
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import { joinSession } from '../../store/actions/getSession';
@@ -30,12 +39,12 @@ class JoinModal extends Component {
     const roomID = this.props.getRoomID();
     event.preventDefault();
     this.props.joinSession(roomID, roomCode);
-  }
+  };
 
   onCancel = event => {
     event.preventDefault();
     this.props.toggleModal(false, '');
-  }
+  };
 
   render() {
     const { roomCode } = this.state;
@@ -63,9 +72,7 @@ class JoinModal extends Component {
                 />
               </FormGroup>
 
-              {sessionError && (
-                <p style={warningText}>{sessionError}</p>
-              )}
+              {sessionError && <p style={warningText}>{sessionError}</p>}
 
               <div
                 style={{
@@ -74,12 +81,16 @@ class JoinModal extends Component {
                   flexWrap: 'wrap',
                 }}
               >
-                <Button color="primary" onClick={this.onJoin}>Join Game</Button>
-                <Button color="primary" onClick={this.onCancel}>Cancel</Button>
+                <Button color="primary" onClick={this.onJoin}>
+                  Join Game
+                </Button>
+                <Button color="primary" onClick={this.onCancel}>
+                  Cancel
+                </Button>
               </div>
             </Form>
           </CardBody>
-        </Card >
+        </Card>
       </Fragment>
     );
   }

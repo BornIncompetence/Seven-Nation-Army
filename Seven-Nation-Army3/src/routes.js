@@ -33,7 +33,7 @@ export default (
     <Route path="/game" component={Game} />
     <Route path="/continue" component={Continue} />
     <Route path="/new" component={NewGame} />
-    <Route path="/help" component={HelpPage}/>
+    <Route path="/help" component={HelpPage} />
     <Route component={PageNotFound} />
   </AnimatedSwitch>
 );

@@ -10,21 +10,25 @@ import ChatHeader from './ChatHeader.js';
 
 // TODO: Port Chat History from the Chat.html file to React
 class ChatHistory extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      friendUsername: " "
+      friendUsername: ' ',
     };
     this.firebase = getFirebase();
     this.updateFriendUsername = this.updateFriendUsername.bind(this);
   }
 
   updateFriendUsername(props) {
-    const friendRef = this.firebase.database().ref('root/sessions/-LeTFyD10JE1O-GKaU14/participatingUserIDs/' + props.friendID);
-    friendRef.once("value").then(res => {
+    const friendRef = this.firebase
+      .database()
+      .ref(
+        'root/sessions/-LeTFyD10JE1O-GKaU14/participatingUserIDs/' +
+          props.friendID
+      );
+    friendRef.once('value').then(res => {
       if (res) {
-        this.setState({ friendUsername: res.val().username })
+        this.setState({ friendUsername: res.val().username });
       }
     });
   }
@@ -42,13 +46,11 @@ class ChatHistory extends Component {
 
     return (
       <div className="chat">
-        <ChatHeader
-          name={this.state.friendUsername}
-          totalMessages="100" />
+        <ChatHeader name={this.state.friendUsername} totalMessages="100" />
         {/* <!-- end chat-header --> */}
 
         <div className="chat-history">
-          <MessageList 
+          <MessageList
             roomID={roomID}
             friendID={friendID}
             friendUsername={this.state.friendUsername}
@@ -56,7 +58,7 @@ class ChatHistory extends Component {
         </div>
         {/* <!-- end chat-history --> */}
 
-        <SendMessage 
+        <SendMessage
           roomID={roomID}
           friendID={friendID}
           friendUsername={this.state.friendUsername}

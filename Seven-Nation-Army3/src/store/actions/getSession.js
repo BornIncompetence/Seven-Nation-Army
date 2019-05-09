@@ -37,7 +37,7 @@ export const getSessions = () => {
 // (Port from Seven-Nation-Army-Backend)
 export const createSession = (title, passcode, adjudicationPeriod) => {
   return (dispatch, getState) => {
-    const token = getState().firebase.auth.stsTokenManager.accessToken
+    const token = getState().firebase.auth.stsTokenManager.accessToken;
     const bodyFormData = new FormData();
     bodyFormData.set('title', title);
     bodyFormData.set('passcode', passcode);
@@ -53,32 +53,32 @@ export const createSession = (title, passcode, adjudicationPeriod) => {
       data: bodyFormData,
       auth: {
         username: token,
-        password: ''
-      }
-    }).then(res => {
-      console.log('Result', res);
-      if((res['data'])['data'] === 'session created'){
-        dispatch({
-          type: CREATE_SESSION_SUCCESS,
-          payload: '-LdLRab8HD6zBlXNJMRK',
-        });
-        dispatch(push('/game'));
-      }else{
+        password: '',
+      },
+    })
+      .then(res => {
+        console.log('Result', res);
+        if (res['data']['data'] === 'session created') {
+          dispatch({
+            type: CREATE_SESSION_SUCCESS,
+            payload: '-LdLRab8HD6zBlXNJMRK',
+          });
+          dispatch(push('/game'));
+        } else {
+          dispatch({
+            type: CREATE_SESSION_FAIL,
+            payload: res['data']['data'],
+          });
+        }
+      })
+      .catch(err => {
+        console.log('Connection Error');
+        console.log(err);
         dispatch({
           type: CREATE_SESSION_FAIL,
-          payload: (res['data'])['data'] ,
+          payload: err,
         });
-      }
-      
-      
-    }).catch(err => {
-      console.log('Connection Error');
-      console.log(err);
-      dispatch({
-        type: CREATE_SESSION_FAIL,
-        payload: err,
-      })
-    });
+      });
     // TODO(Chris): Access AWS database and authorize join session.
   };
 };
@@ -88,9 +88,9 @@ export const leaveSession = () => {
     dispatch({
       type: LEAVE_SESSION,
     });
-    dispatch(push('./home'))
-  }
-}
+    dispatch(push('./home'));
+  };
+};
 
 // export const joinSession = (roomID, roomCode) => {
 //   return (dispatch, _, { getFirebase }) => {
@@ -120,10 +120,9 @@ export const leaveSession = () => {
 //   }
 // }
 
-
 export const joinSession = (roomID, roomCode) => {
   return (dispatch, getState) => {
-    const token = getState().firebase.auth.stsTokenManager.accessToken
+    const token = getState().firebase.auth.stsTokenManager.accessToken;
     const bodyFormData = new FormData();
     bodyFormData.set('sessionID', roomID);
     bodyFormData.set('passcode', roomCode);
@@ -138,33 +137,32 @@ export const joinSession = (roomID, roomCode) => {
       data: bodyFormData,
       auth: {
         username: token,
-        password: ''
-      }
-    }).then(res => {
-      console.log('Result', res);
-      if((res['data'])['data'] === 'User added'){
-        dispatch({
-          type: JOIN_SESSION_SUCCESS,
-          payload: '-LdLRab8HD6zBlXNJMRK',
-        });
-        dispatch(push('/game'));
-      }else{
-        dispatch({
-          type: JOIN_SESSION_NO_MATCH,
-          payload: (res['data'])['data'] ,
-        });
-      }
-      
-      
-    }).catch(err => {
-      console.log('Connection Error');
-      console.log(err);
-      dispatch({
-        type: JOIN_SESSION_FAIL,
-        payload: err,
+        password: '',
+      },
+    })
+      .then(res => {
+        console.log('Result', res);
+        if (res['data']['data'] === 'User added') {
+          dispatch({
+            type: JOIN_SESSION_SUCCESS,
+            payload: '-LdLRab8HD6zBlXNJMRK',
+          });
+          dispatch(push('/game'));
+        } else {
+          dispatch({
+            type: JOIN_SESSION_NO_MATCH,
+            payload: res['data']['data'],
+          });
+        }
       })
-    });
+      .catch(err => {
+        console.log('Connection Error');
+        console.log(err);
+        dispatch({
+          type: JOIN_SESSION_FAIL,
+          payload: err,
+        });
+      });
     // TODO(Chris): Access AWS database and authorize join session.
   };
-}
-
+};

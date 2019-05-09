@@ -14,7 +14,7 @@ import {
   NavLink,
   Card,
   CardBody,
-  CardTitle
+  CardTitle,
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -75,10 +75,8 @@ class Settings extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-             <NavItem>
-               <NavLink href={"/#/help"}>
-                    Help
-                </NavLink>
+              <NavItem>
+                <NavLink href={'/#/help'}>Help</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/elizabethhim/Seven-Nation-Army">
@@ -97,7 +95,9 @@ class Settings extends React.Component {
           <CardBody>
             <Form onSubmit={this.onSubmit.bind(this)}>
               <FormGroup>
-                <Label style={labelStyle} for="displayName">Change Display Name</Label>
+                <Label style={labelStyle} for="displayName">
+                  Change Display Name
+                </Label>
                 <Input
                   type="text"
                   name="text"
@@ -108,7 +108,9 @@ class Settings extends React.Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label style={labelStyle} for="password">Change Password</Label>
+                <Label style={labelStyle} for="password">
+                  Change Password
+                </Label>
                 <Input
                   type="password"
                   name="password"
@@ -120,15 +122,17 @@ class Settings extends React.Component {
               </FormGroup>
               <legend style={labelStyle}>Preferences</legend>
               {/* TODO(Christopher): Save inside collections */}
-              <div style={{padding: '10px 0px', marginBottom: '10px'}}>
+              <div style={{ padding: '10px 0px', marginBottom: '10px' }}>
                 <FormGroup check>
                   <Label style={checkStyle} check>
-                    <Input type="checkbox" name="checkbox1" /> Notify end of round.
+                    <Input type="checkbox" name="checkbox1" /> Notify end of
+                    round.
                   </Label>
                 </FormGroup>
                 <FormGroup check>
                   <Label style={checkStyle} check>
-                    <Input type="checkbox" name="checkbox2" /> Notify end of game.
+                    <Input type="checkbox" name="checkbox2" /> Notify end of
+                    game.
                   </Label>
                 </FormGroup>
               </div>

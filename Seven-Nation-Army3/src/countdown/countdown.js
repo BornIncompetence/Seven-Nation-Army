@@ -72,7 +72,7 @@ export default class Countdown extends Component {
   startCountDown() {
     this.setState({
       value: this.adjudicationPeriod,
-    })
+    });
     this.intervalHandle = setInterval(this.tick, 1000);
     let time = this.state.value;
     this.secondsRemaining = time * 60;

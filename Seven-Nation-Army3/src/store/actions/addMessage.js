@@ -6,22 +6,25 @@ export default function addMessage(payload) {
     const roomID = payload.roomID;
     const chatRoomRef = firebase.database().ref('root/chatrooms/' + roomID);
     const messageRef = chatRoomRef.push();
-    
-    messageRef.update({
-      senderName: payload.senderName,
-      senderID: payload.senderID,
-      time: payload.time,
-      message: payload.message,
-    }, error => {
-      if(error) {
-        console.log("Update messages to chatroom: " + roomID + " failed");
-      } else {
-        dispatch({
-          type: ADD_MESSAGE,
-          payload,
-      });
-      console.log("Update messages to chatroom: " + roomID + " succeeded");
+
+    messageRef.update(
+      {
+        senderName: payload.senderName,
+        senderID: payload.senderID,
+        time: payload.time,
+        message: payload.message,
+      },
+      error => {
+        if (error) {
+          console.log('Update messages to chatroom: ' + roomID + ' failed');
+        } else {
+          dispatch({
+            type: ADD_MESSAGE,
+            payload,
+          });
+          console.log('Update messages to chatroom: ' + roomID + ' succeeded');
+        }
       }
-    });
+    );
   };
 }

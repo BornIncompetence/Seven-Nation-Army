@@ -788,6 +788,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.0.0":
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.4.tgz#dc2e34982eb236803aa27a07fea6857af1b9171d"
+  integrity sha512-w0+uT71b6Yi7i5SE0co4NioIpSYS6lLiXvCzWzGSKvpK5vdQtCbICHMj+gbAKAOtxiV6HsVh/MBdaF9EQ6faSg==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.1.2":
   version "7.1.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.1.5.tgz#4170907641cf1f61508f563ece3725150cc6fe39"
@@ -1885,6 +1892,11 @@ big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
   integrity sha512-+hN/Zh2D08Mx65pZ/4g5bsmNiZUuChDiQfTUQ7qJr4/kuopCr88xZsAXv6mBoZEsUI4OuGHlX59qE94K2mMW8Q==
+
+big.js@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
+  integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
 binary-extensions@^1.0.0:
   version "1.12.0"
@@ -6032,6 +6044,13 @@ json5@^0.5.0, json5@^0.5.1:
   resolved "http://registry.npmjs.org/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
   integrity sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
 
+json5@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
+  integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
+  dependencies:
+    minimist "^1.2.0"
+
 json5@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.0.tgz#e7a0c62c48285c628d20a10b85c89bb807c32850"
@@ -6202,6 +6221,15 @@ loader-utils@1.1.0, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
+loader-utils@^1.0.0:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
+  integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^2.0.0"
+    json5 "^1.0.1"
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -6267,6 +6295,11 @@ lodash.mergewith@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
   integrity sha512-eWw5r+PYICtEBgrBE5hhlT6aAa75f411bgDz/ZL2KZqYV03USvucsxcHUIlGTDTECs1eunpI7HOV7U+WLDvNdQ==
+
+lodash.once@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -6352,6 +6385,11 @@ make-dir@^1.0.0:
   integrity sha512-2w31R7SJtieJJnQtGc7RVL2StM2vGYVfqUOvUDxH6bC6aJTxPxTF0GnIgCyu7tjockiUWAYQRbxa7vKn34s5sQ==
   dependencies:
     pify "^3.0.0"
+
+make-event-props@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/make-event-props/-/make-event-props-1.2.0.tgz#96b87d88919533b8f8934b58b4c3d5679459a0cf"
+  integrity sha512-BmWFkm/jZzVH9A0tEBdkjAARUz/eha+5IRyfOndeSMKRadkgR5DawoBHoRwLxkYmjJOI5bHkXKpaZocxj+dKgg==
 
 makeerror@1.0.x:
   version "1.0.11"
@@ -6452,6 +6490,11 @@ meow@^3.1.0, meow@^3.7.0:
     read-pkg-up "^1.0.1"
     redent "^1.0.0"
     trim-newlines "^1.0.0"
+
+merge-class-names@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.2.0.tgz#cb30ecfc3bdbd96b6f76d0a98777907e5fbb3462"
+  integrity sha512-ifHxhC8DojHT1rG3PHCaJYInUqPd0WO+PxsaYDMkgy7RzfyOFtnlpr/hbhki+m/3R/ujIRVnZkD/AHjgjb5uhg==
 
 merge-deep@^3.0.2:
   version "3.0.2"
@@ -6780,6 +6823,11 @@ no-case@^2.2.0:
   integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
   dependencies:
     lower-case "^1.1.1"
+
+node-ensure@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/node-ensure/-/node-ensure-0.0.0.tgz#ecae764150de99861ec5c810fd5d096b183932a7"
+  integrity sha1-7K52QVDemYYexcgQ/V0Jaxg5Mqc=
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -7469,6 +7517,14 @@ pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+pdfjs-dist@2.1.266:
+  version "2.1.266"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.1.266.tgz#cded02268b389559e807f410d2a729db62160026"
+  integrity sha512-Jy7o1wE3NezPxozexSbq4ltuLT0Z21ew/qrEiAEeUZzHxMHGk4DUV1D7RuCXg5vJDvHmjX1YssN+we9QfRRgXQ==
+  dependencies:
+    node-ensure "^0.0.0"
+    worker-loader "^2.0.0"
 
 pend@~1.2.0:
   version "1.2.0"
@@ -8547,6 +8603,18 @@ react-motion@^0.5.0:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
+react-pdf@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-4.0.5.tgz#4f5584005a504cb7941b01670b40355f4706b726"
+  integrity sha512-hoIL08qU5pU1fNEx6NnLl3omD08LAUc+UkmxGXEql/PXiNWjMZHWlu8MSVg9pwSTN6dXtfky0gehrisWvSOrCg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    lodash.once "^4.1.1"
+    make-event-props "^1.1.0"
+    merge-class-names "^1.1.1"
+    pdfjs-dist "2.1.266"
+    prop-types "^15.6.2"
+
 react-popper@^0.10.4:
   version "0.10.4"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.10.4.tgz#af2a415ea22291edd504678d7afda8a6ee3295aa"
@@ -8867,6 +8935,11 @@ regenerator-runtime@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+
+regenerator-runtime@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
+  integrity sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA==
 
 regenerator-transform@^0.13.3:
   version "0.13.3"
@@ -9239,7 +9312,7 @@ scheduler@^0.11.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-schema-utils@^0.4.4, schema-utils@^0.4.5:
+schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   version "0.4.7"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
   integrity sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==
@@ -10829,6 +10902,14 @@ worker-farm@^1.5.2:
   integrity sha512-6w+3tHbM87WnSWnENBUvA2pxJPLhQUg5LKwUQHq3r+XPhIM+Gh2R5ycbwPCyuGbNg+lPgdcnQUhuC02kJCvffQ==
   dependencies:
     errno "~0.1.7"
+
+worker-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/worker-loader/-/worker-loader-2.0.0.tgz#45fda3ef76aca815771a89107399ee4119b430ac"
+  integrity sha512-tnvNp4K3KQOpfRnD20m8xltE3eWh89Ye+5oj7wXEEHKac1P4oZ6p9oTj8/8ExqoSBnk9nu5Pr4nKfQ1hn2APJw==
+  dependencies:
+    loader-utils "^1.0.0"
+    schema-utils "^0.4.0"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"

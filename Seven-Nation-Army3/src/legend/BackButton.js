@@ -28,4 +28,7 @@ const mapDispatchToProps = dispatch => ({
   leaveSession: () => dispatch(leaveSession()),
 });
 
-export default connect(null, mapDispatchToProps)(BackButton)
+export default connect(
+  null,
+  mapDispatchToProps
+)(BackButton);

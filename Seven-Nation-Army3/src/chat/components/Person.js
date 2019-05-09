@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 // import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 // import '../../styles/Person.scss';
 import '../../styles/Chat.scss';
-import openChatRoom from "../../store/actions/openChatRoom";
+import openChatRoom from '../../store/actions/openChatRoom';
 
 class Person extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Person extends Component {
   handleClick = event => {
     event.preventDefault();
     this.props.openChatRoom(this.props.id);
-  }
+  };
   render() {
     const { name, isOnline, status } = this.props;
     return (
@@ -50,7 +50,10 @@ Person.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  openChatRoom: friendID => dispatch(openChatRoom(friendID))
-})
+  openChatRoom: friendID => dispatch(openChatRoom(friendID)),
+});
 
-export default connect(null, mapDispatchToProps)(Person);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Person);

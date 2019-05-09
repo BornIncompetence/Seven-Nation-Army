@@ -14,35 +14,54 @@ class GameList extends Component {
   onClick = event => {
     console.log(event.target.id);
     this.props.toggleModal(true, event.target.id);
-  }
+  };
 
   componentDidMount = () => {
     this.props.getSessions();
-  }
-
-
+  };
 
   render() {
     const { sessions } = this.props;
     let list = [];
     for (let gameID in sessions) {
       if (sessions[gameID].hasOwnProperty('participatingUserIDs')) {
-        const gameMasterID = ((Object.keys(sessions[gameID].participatingUserIDs).filter((value)=>{return value===sessions[gameID].gameMasterUserID})));
+        const gameMasterID = Object.keys(
+          sessions[gameID].participatingUserIDs
+        ).filter(value => {
+          return value === sessions[gameID].gameMasterUserID;
+        });
         list.push(
           <tr key={gameID}>
             <td>{sessions[gameID].title}</td>
             <td>{`${
-              sessions[gameID].participatingUserIDs[gameMasterID] && sessions[gameID].participatingUserIDs[gameMasterID].displayName !==undefined ? sessions[gameID].participatingUserIDs[gameMasterID].displayName: 'Anonymous'
+              sessions[gameID].participatingUserIDs[gameMasterID] &&
+              sessions[gameID].participatingUserIDs[gameMasterID]
+                .displayName !== undefined
+                ? sessions[gameID].participatingUserIDs[gameMasterID]
+                    .displayName
+                : 'Anonymous'
             }`}</td>
-            <td>{`${Object.keys(sessions[gameID].participatingUserIDs).length} / 7`}</td>
-            <td><Button id={gameID} onClick={this.onClick}>Join</Button></td>
+            <td>{`${
+              Object.keys(sessions[gameID].participatingUserIDs).length
+            } / 7`}</td>
+            <td>
+              <Button id={gameID} onClick={this.onClick}>
+                Join
+              </Button>
+            </td>
           </tr>
         );
       }
     }
     return (
       <Fragment>
-        <Table style={{ backgroundColor: "#ffffff", borderRadius: "10px", color: "#000000" }}>
+        <Table
+          style={{
+            backgroundColor: '#ffffff',
+            borderRadius: '10px',
+            color: '#000000',
+          }}
+        >
           <thead>
             <tr>
               <th>Room Name</th>
@@ -51,9 +70,7 @@ class GameList extends Component {
               <th />
             </tr>
           </thead>
-          <tbody>
-            {list}
-          </tbody>
+          <tbody>{list}</tbody>
         </Table>
       </Fragment>
     );
@@ -74,4 +91,7 @@ const mapDispatchToProps = dispatch => ({
   getSessions: () => dispatch(getSessions()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GameList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameList);
