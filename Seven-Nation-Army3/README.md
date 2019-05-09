@@ -1,6 +1,5 @@
 # cra-boilerplate
 
-
 This project is an [Create React App - v2.1.1](https://facebook.github.io/create-react-app/) boilerplate
 with integration of Redux, React Router, Redux thunk & Reactstrap(Bootstrap v4)
 
@@ -9,8 +8,7 @@ with integration of Redux, React Router, Redux thunk & Reactstrap(Bootstrap v4)
 Before starting with project, please headover to [CRA](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
 ) documentation.
 
-
-#### Features
+## Features
 
 - [Domain-style](https://github.com/reactjs/redux/blob/master/docs/faq/CodeStructure.md) for code structure
 
@@ -18,28 +16,17 @@ Before starting with project, please headover to [CRA](https://github.com/facebo
 
 1. Clone this repo
 
-`https://github.com/mohandere/cra-boilerplate.git`
+    `https://github.com/mohandere/cra-boilerplate.git`
 
-2. To run, go to project folder and run
+1. To run, go to project folder and run `yarn install` (if you are using yarn)
 
-`$ yarn install` (if you are using yarn)
+1. Now start dev server by running `yarn start`
 
-3. Now start dev server by running -
+1. To create production ready codes, run `yarn build`
 
-`$ yarn start`
-
-4. visit - http://localhost:3000/
-
-To create production ready codes -
-
-`$ yarn build`
-
-5. Analyze source code / bundle size
-
-`$ yarn analyze`
+1. Analyze source code / bundle size `yarn analyze`
 
 for more commands refer `package.json`
-
 
 ## Roadmap
 
@@ -65,15 +52,14 @@ Reference -
 - http://redux.js.org/docs/faq/CodeStructure.html
 - http://engineering.kapost.com/2016/01/organizing-large-react-applications/
 
-#### Common components
+### Common components
 
 Place all common components such as Header/Footer in `src/common/components` folder.
-
 
 ### Adding new Module/Feature
 
 - Create a Module/Feature folder at `src/`
-like - - `src/home`
+like `src/home`
 Feature folder must contain booststrap file named `index.js` and css file 'style.css' at root
 
 Like -
@@ -89,7 +75,6 @@ Next as per need, add sub folders like -
 - `src/home/containers/`
 - `src/home/components/`
 
-
 ### Actions
 
 - Create folder named `actions` inside Feature folder like - `src/home/actions`
@@ -97,20 +82,17 @@ Next as per need, add sub folders like -
 
 ### Reducers
 
- - Create folder named `reducers` inside Feature folder like - `src/home/reducers`
+- Create folder named `reducers` inside Feature folder like - `src/home/reducers`
 - Place `index.js` which combines all reducers using `combineReducers`
 
 ## Deployment
 
 Refer [deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment) section from CRA doc.
 
-
-## Issues / Suggestions ?
+## Issues / Suggestions
 
 File an issue [here](https://github.com/mohandere/cra-boilerplate/issues).
-
 
 ## License
 
 MIT
-
