@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 import '../../styles/Setting.scss';
 import '../../styles/Login.scss';
 import Video from '../../common/components/Video';
-import { createSession } from '../../store/actions/getSession';
+import { createSession } from '../../store/actions/session';
 
 const labelStyle = { color: 'black' };
 

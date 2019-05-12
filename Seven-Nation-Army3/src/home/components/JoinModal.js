@@ -12,7 +12,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { joinSession } from '../../store/actions/getSession';
+import { joinSession } from '../../store/actions/session';
 
 const labelStyle = { color: 'black' };
 const warningText = { fontSize: '12px', color: 'red' };

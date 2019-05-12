@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Button } from 'reactstrap';
 import '../styles/BackButton.scss';
-import { leaveSession } from '../store/actions/getSession';
+import { leaveSession } from '../store/actions/session';
 
 class BackButton extends Component {
   render() {

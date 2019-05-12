@@ -79,7 +79,7 @@ class Settings extends React.Component {
                 <NavLink href={'/#/help'}>Help</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/elizabethhim/Seven-Nation-Army">
+                <NavLink href="https://github.com/BornIncompetence/Seven-Nation-Army">
                   GitHub
                 </NavLink>
               </NavItem>

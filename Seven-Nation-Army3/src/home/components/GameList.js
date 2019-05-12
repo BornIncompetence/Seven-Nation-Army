@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Table, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import { getSessions } from '../../store/actions/getSession';
+import { getSessions } from '../../store/actions/session';
 
 class GameList extends Component {
   constructor(props) {
